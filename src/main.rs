@@ -22,8 +22,12 @@ fn main() {
 
     /* add code here ... */
     let mut garbageVar: u16 = 0;
-    let totalrows :u16 = lines.next().unwrap().parse::<u16>().unwrap();
-    let totalcolumns :u16 = lines.next().unwrap().parse::<u16>().unwrap();
+    let mut grid: Vec<u16> = vec![]; 
+    for i in lines.next().unwrap().split(" "){
+        grid.push(i.parse::<u16>().unwrap());
+    }
+    let totalrows :u16 = grid[0];
+    let totalcolumns :u16 = grid[1];
 //println!("{}",totalcolumns);
 //println!("{}",totalrows);
     for row in (1..(totalrows+1)/2+1){ // counting up for half the rows and column, then counting down.
