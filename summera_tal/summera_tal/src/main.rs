@@ -20,14 +20,20 @@ fn main() {
     /* add code here ... */
     let totalNumbers = lines.next().unwrap().trim().parse::<usize>().unwrap();
     let mut myVec: Vec<isize> = vec![];
-    let mut toOutput: isize = 0;
+    let mut toOutput: isize = 0; // this will be printed as result
     for i in lines.next().unwrap().trim().split(" ") {
         myVec.push(i.parse::<isize>().unwrap());
     }
-    myVec.sort();
+    myVec.sort(); // simple sort and the reverse on the line after to order from high to low
     myVec.reverse();
-
-    for index in 0..(totalNumbers + 1) / 2 {
+    
+/*
+going trough the numbers, 
+(totalNumbers + 1) /2 will always go through half the numbers,
+since even/2 = (even+1)/2
+and if it was odd the solution should add the (odd+1)/2 numbers
+*/
+    for index in 0..(totalNumbers + 1) / 2 { 
         //eprintln!("adding");
         toOutput += myVec[index];
     }
