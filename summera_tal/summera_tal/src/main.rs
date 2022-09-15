@@ -18,10 +18,10 @@ fn main() {
     //.collect::<Vec<String>>(); // Vector not necessary, see example solution.
 
     /* add code here ... */
-    let totalNumbers = lines.next().unwrap().parse::<usize>().unwrap();
+    let totalNumbers = lines.next().unwrap().trim().parse::<usize>().unwrap();
     let mut myVec: Vec<isize> = vec![];
     let mut toOutput: isize = 0;
-    for i in lines.next().unwrap().split(" ") {
+    for i in lines.next().unwrap().trim().split(" ") {
         myVec.push(i.parse::<isize>().unwrap());
     }
     myVec.sort();
